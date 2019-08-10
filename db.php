@@ -2,14 +2,14 @@
 
 
 //Verilenler bazasin qoshulmaq
-$conn = new mysqli("localhost","root","","new_baza");
+$conn = new mysqli("localhost","root","password","db");
 
 if ($conn->connect_error) {
 	die("Connection failed: " .$conn->connect_error);
 }else{
 	echo "Connected successfully";
 }
-$sql = "SELECT * FROM baza";
+$sql = "SELECT * FROM table";
 $result= $conn->query($sql);
 
 
@@ -25,7 +25,7 @@ if (isset($_POST['sublim'])) {
 
 
 	 //====verilenler bazasina melumat yazmaq=======//
-	 $sen = "INSERT INTO baza(title,detail)
+	 $sen = "INSERT INTO table(title,detail)
 	 VALUES('$title','$detail')";
 
 //=======yoxlama kodda sef var yoxdu========//
